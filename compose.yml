@@ -35,6 +35,7 @@ services:
     environment:
       # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
       - DEBUG=${DEBUG:-0}
+      - LOCALSTACK_ACKNOWLEDGE_ACCOUNT_REQUIREMENT=1 # 暫定対応: LocalStackのアカウント必須化への猶予設定。恒久的にはLOCALSTACK_AUTH_TOKEN設定へ移行 
     volumes:
       - "localstack_data:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
